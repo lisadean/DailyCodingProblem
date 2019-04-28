@@ -21,8 +21,8 @@ class Node:
         self.right = right
 
 
-node = Node('root', Node('left', Node('left.left')), Node('right'))
-# node = Node(1, Node(2), Node(3))
+node1 = Node('root', Node('left', Node('left.left')), Node('right'))
+node2 = Node('1', Node('2'), Node('3'))
 
 
 def serialize(root):
@@ -46,6 +46,7 @@ def deserialize(data):
     return helper()
 
 
-# print(serialize(node))
-# print(deserialize(serialize(node)).left.left.val)
-assert deserialize(serialize(node)).left.left.val == 'left.left'
+# print(serialize(node1))
+# print(serialize(node2))
+assert deserialize(serialize(node1)).left.left.val == 'left.left'
+assert deserialize(serialize(node2)).right.val == '3'
