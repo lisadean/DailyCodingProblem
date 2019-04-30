@@ -7,3 +7,22 @@
 # should give 3.
 
 # You can modify the input array in-place.
+
+input1 = [3, 4, -1, 1]
+input2 = [1, 2, 0]
+
+
+def find_missing_int(input):
+    temp_array = []
+    for number in input:
+        if number > 0:
+            temp_array.insert(number, number)
+    for index, value in enumerate(temp_array):
+        print('index: {} value: {}'.format(index, value))
+
+
+find_missing_int(input1)
+# print(find_missing_int(input1))
+# print(find_missing_int(input2))
+# assert find_missing_int(input1) == 2
+# assert find_missing_int(input2) == 3
